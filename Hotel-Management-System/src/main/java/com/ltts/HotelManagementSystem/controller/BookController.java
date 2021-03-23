@@ -46,18 +46,18 @@ public ModelAndView searchHotelPage(ModelAndView modelAndView) {
 		String checkoutdate=req.getParameter("checkoutdate");
 		Date d1=Date.valueOf(checkoutdate);
 		String paymenttype=req.getParameter("paymenttype");
-		String cost=req.getParameter("cost");
+		String phonenumber=req.getParameter("phonenumber");
 		String menuid=req.getParameter("menuid");
 		String menudate=req.getParameter("menudate");
 		Date d2=Date.valueOf(menudate);
 		
 		
 	//	ApplicationContext ac=new ClassPathXmlApplicationContext();
-		Booking n=new Booking(bookingid,roomnumber,d,status,d1,paymenttype,cost,menuid,d2);
+		Booking n=new Booking(bookingid,roomnumber,d,status,d1,paymenttype,phonenumber,menuid,d2);
 		System.out.println("***** INSIDE CONTROLLER ****"+n);
 		boolean b=bd.InsertBooking(n);
 		if(b==false) {
-			mv=new ModelAndView("success");
+			mv=new ModelAndView("payment");
 			model.addAttribute("msg", "Successfully Inserted.. ");
 		}
 		else {

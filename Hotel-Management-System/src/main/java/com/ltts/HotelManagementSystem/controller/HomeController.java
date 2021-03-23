@@ -1,5 +1,7 @@
 package com.ltts.HotelManagementSystem.controller;
 
+
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.ltts.HotelManagementSystem.Dao.MemberDao;
 import com.ltts.HotelManagementSystem.model.Member;
+
 
 @RestController
 public class HomeController {
@@ -54,12 +57,24 @@ public class HomeController {
 	
 	}
 	
+	@RequestMapping("/payment")
+	public ModelAndView payment() {
+		return new ModelAndView("payment");
+	
+	}
+	
+	@RequestMapping("/paymentSuccess")
+	public ModelAndView paymentSuccess() {
+		return new ModelAndView("paymentSuccess");
+	
+	}
+	
 	@RequestMapping("/logout")
 	public ModelAndView logout() {
 		return new ModelAndView("logout");
 	
 	}
-	
+
 	
 	@RequestMapping(value="adduser", method=RequestMethod.POST)
 	public ModelAndView addUser(HttpServletRequest req, Model model) {

@@ -39,6 +39,8 @@ li a:hover:not(.active) {
         <li><a href="viewroom">ViewRooms</a></li>
         <li><a href="viewmenu">ViewMenu</a></li>
         <li><a href="logout">Logout</a></li>
+     
+        
       </ul>
 
     <img src="https://cf.bstatic.com/images/hotel/max1024x768/217/217247556.jpg" alt="Navigation" width="100%">

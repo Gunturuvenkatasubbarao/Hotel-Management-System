@@ -29,7 +29,7 @@ ${list} --%>
      
     <div align="center">
         <table border="1" cellpadding="5">
-            <caption><h2>List of Complaints</h2></caption>
+            <caption><h2>List of Booking</h2></caption>
             <tr>
                 <th>roomnumber</th>
                 <th>cost</th>

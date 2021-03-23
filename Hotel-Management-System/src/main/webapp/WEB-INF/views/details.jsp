@@ -46,8 +46,8 @@
 </td>
 </tr>
 <tr>
-<td>Cost</td>
-<td>       <input type="text" name="cost"></td>
+<td>phonenumber</td>
+<td>       <input type="text" name="phonenumber"></td>
 </tr>
 <tr>
 <td>MenuId</td>

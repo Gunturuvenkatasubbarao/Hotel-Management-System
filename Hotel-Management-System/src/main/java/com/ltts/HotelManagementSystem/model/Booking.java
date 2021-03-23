@@ -19,7 +19,7 @@ public class Booking implements Serializable{
 	private String status;
 	private Date checkoutdate;
 	private String paymenttype;
-	private String cost;
+	private String phonenumber;
 	private String menuid;
 	private Date menudate;
 	
@@ -59,11 +59,11 @@ public class Booking implements Serializable{
 	public void setPaymenttype(String paymenttype) {
 		this.paymenttype = paymenttype;
 	}
-	public String getCost() {
-		return cost;
+	public String getphonenumber() {
+		return phonenumber;
 	}
-	public void setCost(String cost) {
-		this.cost = cost;
+	public void setphonenumber(String phonenumber) {
+		this.phonenumber = phonenumber;
 	}
 	public String getMenuid() {
 		return menuid;
@@ -81,7 +81,7 @@ public class Booking implements Serializable{
 		return serialVersionUID;
 	}
 	public Booking(String bookingid, String roomnumber, Date bookingdate, String status, Date checkoutdate,
-			String paymenttype, String cost, String menuid, Date menudate) {
+			String paymenttype, String phonenumber, String menuid, Date menudate) {
 		super();
 		this.bookingid = bookingid;
 		this.roomnumber = roomnumber;
@@ -89,7 +89,7 @@ public class Booking implements Serializable{
 		this.status = status;
 		this.checkoutdate = checkoutdate;
 		this.paymenttype = paymenttype;
-		this.cost = cost;
+		this.phonenumber = phonenumber;
 		this.menuid = menuid;
 		this.menudate = menudate;
 	}
@@ -100,8 +100,8 @@ public class Booking implements Serializable{
 	@Override
 	public String toString() {
 		return "Booking [bookingid=" + bookingid + ", roomnumber=" + roomnumber + ", bookingdate=" + bookingdate
-				+ ", status=" + status + ", checkoutdate=" + checkoutdate + ", paymenttype=" + paymenttype + ", cost="
-				+ cost + ", menuid=" + menuid + ", menudate=" + menudate + "]";
+				+ ", status=" + status + ", checkoutdate=" + checkoutdate + ", paymenttype=" + paymenttype + ", phonenumber="
+				+ phonenumber + ", menuid=" + menuid + ", menudate=" + menudate + "]";
 	}
 	
 	
