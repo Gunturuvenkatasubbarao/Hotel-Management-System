@@ -7,9 +7,6 @@ import javax.persistence.Id;
 
 @Entity
 public class Menu implements Serializable{
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	@Id
 	private String menuid;
@@ -53,8 +50,6 @@ public class Menu implements Serializable{
 	public void setCost(String cost) {
 		this.cost = cost;
 	}
-
-
 	@Override
 	public String toString() {
 		return "Menu [menuid=" + menuid + ", menuname=" + menuname + ", cost=" + cost + "]";
