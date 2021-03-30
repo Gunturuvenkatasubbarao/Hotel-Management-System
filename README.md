@@ -1,2 +1,2 @@
 # Hotel-Management-System
-https://www.code-inspector.com/project/20654/score/svg
+![code quality score](https://www.code-inspector.com/project/20654/score/svg)
