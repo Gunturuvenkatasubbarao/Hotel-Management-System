@@ -11,16 +11,12 @@ import javax.persistence.Id;
 
 @Entity
 public class Member implements Serializable{
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private String name;
 	private String username;
 	private String password;
 	private String country;
 	private String mobile;
-
 	@Id
 	private String email;
 
@@ -33,8 +29,6 @@ public class Member implements Serializable{
 		this.mobile = mobile;
 		this.email = email;
 	}
-	
-
 	public Member() {
 		super();
 	}
