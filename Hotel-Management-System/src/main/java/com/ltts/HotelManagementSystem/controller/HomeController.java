@@ -1,11 +1,6 @@
 package com.ltts.HotelManagementSystem.controller;
-
-
-
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -15,22 +10,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.ltts.HotelManagementSystem.Dao.MemberDao;
 import com.ltts.HotelManagementSystem.model.Member;
-
-
 @RestController
 public class HomeController {
-	
 	@Autowired
 	MemberDao md;
-	
 	@RequestMapping("/hi")
 	public String firstMethod() {
 		return "Hello SpringBoot";
 	}
-	
 	@RequestMapping(" ")
 	public ModelAndView secondMethod() {
 		return new ModelAndView("index");
@@ -75,7 +64,6 @@ public class HomeController {
 	
 	}
 
-	
 	@RequestMapping(value="adduser", method=RequestMethod.POST)
 	public ModelAndView addUser(HttpServletRequest req, Model model) {
 		ModelAndView mv=null;
@@ -85,8 +73,6 @@ public class HomeController {
 		String country=req.getParameter("country");
 		String mobile=req.getParameter("mobile");
 		String email=req.getParameter("email");
-		
-	//	ApplicationContext ac=new ClassPathXmlApplicationContext();
 		Member m=new Member(name,username,password,country,mobile,email);
 		System.out.println("***** INSIDE CONTROLLER ****"+m);
 		boolean b=md.InsertMember(m);
@@ -99,14 +85,6 @@ public class HomeController {
 			model.addAttribute("msg", "Error due to Connection");
 			
 		}
-		/*
-		 * try { b=md.InsertMember(m); mv=new ModelAndView("success"); } catch(Exception
-		 * e) {
-		 * 
-		 * mv=new ModelAndView("error"); }
-		 */
-		
-		
 		return mv;
 	}
 	@RequestMapping(value="checkuser")
@@ -114,13 +92,9 @@ public class HomeController {
 		ModelAndView mv=null;
 		String email=req.getParameter("email");
 		String password=req.getParameter("password");
-		
 		Member m=md.getMemberByEmail(email);
 		System.out.println(m);
-		
-		
 		if(m !=null) {
-		
 			if(password.equals(m.getPassword())) {
 				model.addAttribute("value", m.getUsername());
 				mv=new ModelAndView("index");
