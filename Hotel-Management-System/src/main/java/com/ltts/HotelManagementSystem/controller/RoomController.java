@@ -1,8 +1,6 @@
 package com.ltts.HotelManagementSystem.controller;
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,16 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.ltts.HotelManagementSystem.Dao.BookingDao;
 import com.ltts.HotelManagementSystem.Dao.MemberDao;
 import com.ltts.HotelManagementSystem.Dao.RoomDao;
 import com.ltts.HotelManagementSystem.model.RoomDetails;
-
-
-
 @RestController
-
 public class RoomController {
 	@Autowired
 	MemberDao md;
@@ -55,8 +48,6 @@ public class RoomController {
 		String floor=req.getParameter("floor");
 		String facility=req.getParameter("facility");
 		String cost=req.getParameter("cost");
-		
-	//	ApplicationContext ac=new ClassPathXmlApplicationContext();
 		RoomDetails r=new RoomDetails(hotelname,roomnumber,roomtype,roomdescription,floor, facility, cost);
 		System.out.println("***** INSIDE CONTROLLER ****"+r);
 		boolean b=rd.InsertRoomDetails(r);
@@ -69,14 +60,6 @@ public class RoomController {
 			model.addAttribute("msg", "Error due to Connection");
 			
 		}
-		/*
-		 * try { b=md.InsertMember(m); mv=new ModelAndView("success"); } catch(Exception
-		 * e) {
-		 * 
-		 * mv=new ModelAndView("error"); }
-		 */
-		
-		
 		return mv;
 	}
 	@RequestMapping("/viewroom")
