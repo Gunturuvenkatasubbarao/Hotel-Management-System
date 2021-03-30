@@ -86,7 +86,11 @@ public class HomeController {
 		String password=req.getParameter("password");
 		Member m=md.getMemberByEmail(email);
 		System.out.println(m);
-		if(m !=null) {
+		if(m ==null) {
+			model.addAttribute("msg", "User Not Found Please Register");
+			mv=new ModelAndView("login");
+		}
+		else {
 			if(password.equals(m.getPassword())) {
 				model.addAttribute("value", m.getUsername());
 				mv=new ModelAndView("index");
@@ -96,10 +100,7 @@ public class HomeController {
 				model.addAttribute("msg", "Password Wrong");
 				mv=new ModelAndView("login");
 			}
-		}
-		else {
-			model.addAttribute("msg", "User Not Found Please Register");
-			mv=new ModelAndView("login");
+			
 		}
 		return mv;
 	}
