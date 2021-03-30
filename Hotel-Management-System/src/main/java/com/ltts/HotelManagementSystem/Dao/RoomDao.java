@@ -1,18 +1,12 @@
 package com.ltts.HotelManagementSystem.Dao;
-
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import com.ltts.HotelManagementSystem.model.Booking;
 import com.ltts.HotelManagementSystem.model.RoomDetails;
-
-
-
 @Repository
 public class RoomDao {
 	@Autowired
@@ -20,8 +14,6 @@ public class RoomDao {
 	
 	@Autowired
 	private SessionFactory sf;
-	
-	
 	public boolean InsertRoomDetails(RoomDetails r) {
 		boolean b=false;
 		Session s=null;
@@ -37,26 +29,14 @@ public class RoomDao {
 		catch(Exception e) {
 			System.out.println("Exception "+e);
 			b=true;
-		}
-//		finally {
-//			sf.close();
-//	}
-//		
+		}		
 		return b;
 	}
 	public List<RoomDetails> getAllRoomDetails(){
 		Session session=sf.openSession();
-        session.beginTransaction();
-        
-        List<RoomDetails> li=sf.openSession().createCriteria(Booking.class).list();
-        //List<ProductsModel> product=sessionFactory.openSession().createCriteria(ProductsModel.class).list();
-        
-        session.getTransaction().commit();
-     
-		return li;
-		
+		session.beginTransaction();
+		List<RoomDetails> li=sf.openSession().createCriteria(Booking.class).list();
+		session.getTransaction().commit();
+		return li;	
 	}
-	
-
-	
 	}
