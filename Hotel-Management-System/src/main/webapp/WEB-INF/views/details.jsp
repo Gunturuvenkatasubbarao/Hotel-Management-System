@@ -29,7 +29,11 @@
 <tr>
 
 <td>Status</td>
-<td>     <input type="text" name="status"></td>
+<td> <select id="status" name="status">
+ <option value=""></option>
+ <option value="YES">YES</option>
+<option value="NO">NO</option>
+</select>
 </tr>
 <tr>
 
@@ -40,6 +44,7 @@
 
 <td>PaymentType</td>
 <td> <select id="paymenttype" name="paymenttype">
+ <option value=""></option>
  <option value="CASH">CASH</option>
 <option value="ONLINE">ONLINE</option>
 </select>
@@ -51,7 +56,10 @@
 </tr>
 <tr>
 <td>MenuId</td>
-<td>      <input type="number" name="menuid"></td>
+<td> <select id="menuid" name="menuid">
+ <option value="1">1</option>
+<option value="2">2</option>
+</select>
 </tr>
 <tr>
 <td>MenuDate</td> 
