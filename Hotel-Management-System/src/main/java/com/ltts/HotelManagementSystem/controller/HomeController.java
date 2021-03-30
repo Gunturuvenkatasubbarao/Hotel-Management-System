@@ -43,27 +43,20 @@ public class HomeController {
 	@RequestMapping("/menu")
 	public ModelAndView menu() {
 		return new ModelAndView("menu");
-	
 	}
-	
 	@RequestMapping("/payment")
 	public ModelAndView payment() {
 		return new ModelAndView("payment");
 	
 	}
-	
 	@RequestMapping("/paymentSuccess")
 	public ModelAndView paymentSuccess() {
 		return new ModelAndView("paymentSuccess");
-	
 	}
-	
 	@RequestMapping("/logout")
 	public ModelAndView logout() {
 		return new ModelAndView("logout");
-	
 	}
-
 	@RequestMapping(value="adduser", method=RequestMethod.POST)
 	public ModelAndView addUser(HttpServletRequest req, Model model) {
 		ModelAndView mv=null;
@@ -82,8 +75,7 @@ public class HomeController {
 		}
 		else {
 			mv=new ModelAndView("error");
-			model.addAttribute("msg", "Error due to Connection");
-			
+			model.addAttribute("msg", "Error due to Connection");	
 		}
 		return mv;
 	}
